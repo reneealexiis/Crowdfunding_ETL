@@ -44,21 +44,21 @@ CREATE TABLE "campaign" (
     "end_date" DATE   NOT NULL,
     "staff_pick" VARCHAR(255)   NOT NULL,
     "spotlight" VARCHAR(255)   NOT NULL,
+    "category" VARCHAR(255)   NOT NULL,
     "category_id" VARCHAR(255)   NOT NULL,
     "subcategory_id" VARCHAR(255)   NOT NULL,
-    "category" VARCHAR(255)   NOT NULL,
     "subcategory" VARCHAR(255)   NOT NULL,
     CONSTRAINT "pk_campaign" PRIMARY KEY (
         "cf_id"
      )
 );
 
-ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign__contact_id" FOREIGN KEY("", "contact_id")
-REFERENCES "contacts" ("", "contact_id");
+ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign__contact_id" FOREIGN KEY( "contact_id")
+REFERENCES "contacts" ("contact_id");
 
-ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign__category_id_category" FOREIGN KEY("", "category_id", "category")
-REFERENCES "category" ("", "category_id", "category");
+ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign__category_id_category" FOREIGN KEY("category_id", "category")
+REFERENCES "category" ( "category_id", "category");
 
-ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign__subcategory_id_subcategory" FOREIGN KEY("", "subcategory_id", "subcategory")
-REFERENCES "subcategory" ("", "subcategory_id", "subcategory");
+ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign__subcategory_id_subcategory" FOREIGN KEY("subcategory_id", "subcategory")
+REFERENCES "subcategory" ( "subcategory_id", "subcategory");
 
